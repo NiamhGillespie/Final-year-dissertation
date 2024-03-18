@@ -1,0 +1,39 @@
+\documentclass[l4proj.tex]{subfiles}
+\begin{document}  
+
+This chapter will introduce the motivation and aims behind the Requirement and Value Identification Tool for Prioritisation (RViT).
+
+\section{Motivation}
+
+Project management and task prioritisation is a key element of any software development, no matter the scale. Agile methodology and practice adoption has been on the rise in recent years with a jump from 37$\%$ to 86$\%$ of software development teams adopting agile practices between 2020 and 2021 \cite{Knaster2023}. This increased interest in agile methodology is likely in part due to the COVID pandemic, where teams rapidly had to change their development practices to allow for developers working from home.   Although the agile manifesto puts a focus on face-to-face interactions \cite{Kent2001}, with 91$\%$ of developers being satisfied working from home, it is unlikely that the majority of workplaces will return to fully in person working \cite{Ramírez2022}. Especially as working from home may lead to an up to 5$\%$ boost in productivity \cite{Barrero2021}. Due to this escalation of agile adoption and remote working there has been a greater demand for online agile project management tools as more traditional face-to-face agile methods fall by the wayside.
+
+Many of the agile project management tools currently on the market are challenging to set up and have overly complex user interfaces with a steep learning curve. Some of these agile tools also either come with a cost to the user or provide free tiers with limited functionality. These administrative overheads can hamper productivity of smaller teams as they absorb coding time and are seen as frustrating hurdles that get in the way of active development. They are in a way an anti-agent, undermining the agile philosophy of prioritising rapid, flexible code development by adding an extra layer of bureaucracy to the development process.
+
+By creating a visually appealing free-to-use tool with a simplified, customisable workflow, users will be able to spend more time on the things that really matter - software development.
+
+In agile tools the transmission of key information is sometimes absent from a user's visible material, limiting their perception of the value that the unit of work they are developing will bring. Normally every epic and story that an agile team work on has business value associated with it. In typical agile tooling these values are not visible, leading to a lack of awareness both within the agile team itself and to any project stakeholders. By making these values visible in the workflow, agile teams and stakeholders can use them as part of their prioritisation process. Demonstrating the value of a user story or epic also allows agile team members to consider the customer's needs and the task's utility value, leading to increased motivation and team awareness.
+
+
+\section{Aims}
+The aim of this project is to create an agile tool for requirement and value identification and prioritisation, called RViT for short. The tool will provide a streamlined user experience primarily based on kanban methodology. This will allow teams to experience all the advantages that online project management can bring without the extensive overhead that other tools have.
+
+The tool should support agile teams in the following tasks: 
+\begin{itemize}
+    \item \textbf{Epic and user story creation and visualisation:}
+    Agile team members should be able to create and edit team-specific epics and corresponding user stories to identify project requirements. They should then be able to view these on a dashboard and have the ability to re-order each element to help visualise their priority.
+    \item \textbf{Linking values to epics and stories:}
+    Agile teams should be able to create a list of value statements based on company or project specific values. They should then be able to associate these statements with both epics and user stories, allowing team members to see the potential value of an item. This will help increase team awareness of added value and can also be used for prioritisation.
+    \item \textbf{Visualising workflow:}
+    Agile teams should be able to visualise user story progression through a team kanban board. They should be able to create a customisable workflow through adding their own tracking columns, allowing them to visualise bottlenecks and blockers. Tracking columns should have optional WIP (work in progress) limits to increase productivity by preventing overloading team members with tasks, reducing the multitasking and context switching that a developer may have to do. 
+    \item \textbf{Administration support:}
+    Organisations should be able to sign up to the tool and create an admin user. This admin user should then be able to add other users and create development teams.
+\end{itemize}
+
+In addition to the functionality, RViT should deliver a user experience to the user that is simple to use, with a consistent visual metaphor, and allow the user to colour code their added elements to their preference, or to address any colour-based accessibility issues that is present in their team. This focus on delivering an aesthetically pleasing and easy to set up application, aims to deliver a product that has a high user acceptance rate alongside its depth of functionality.
+
+This tool will be targeted at smaller to medium enterprises, where the key is delivering core functionality and ease of use over the functional depth offered by applications that focus on large enterprise solutions such as Atlassian’s Jira.
+
+Given that the tool is targeted at a developer audience with a hybrid work environment, its primary focus is delivery on a computer monitor via a web browser such as Mozilla Firefox, Google Chrome, Microsoft Edge or Duck Duck Go, though further development to offer support for mobile devices may be seen as a bonus by its target demographic.
+
+
+\end{document}

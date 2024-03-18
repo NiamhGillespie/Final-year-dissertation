@@ -1,0 +1,139 @@
+\documentclass[l4proj.tex]{subfiles}
+\begin{document}    
+
+This chapter looks at the functional and non-functional requirements of this project. Requirements were identified in a number of ways as detailed in this chapter. While the majority of requirements were identified in the initial stages of the project, some were identified later as the project was developed and were added to the requirements list.
+
+\section{Requirements Gathering}
+While the majority of development was carried out in an agile manner, due to the time constraints of the project, the initial requirements were gathered using a more traditional waterfall approach. First a number of user scenarios were created to identify the use cases of the tool, then these were converted into smaller, more actionable, user stories from which a list of requirements were gathered. 
+
+The user stories and requirements were updated during development as through the agile process more requirements were identified.
+
+\subsection{User Scenarios}
+The following user scenarios were created to help understand the potential users of RViT and how they would interact with the system.
+\begin{itemize}
+    \item \textbf{Denise} is an experienced software developer running a small business with 20 developers. She is new to agile, having previously worked only with waterfall methodology. However, her customers are constantly changing their requirements and a new start to her team has suggested they try an agile approach. Denise's employees all work remotely on a variety of different machines so she would prefer a web application that can work on multiple browsers. Denise has decided to do all the administration for the new tool herself, so she's looking for a simplified set up process. While Denise is an experienced developer, she has never used a tool like RViT before so will want to read help documentation before getting started.\\
+    
+    \item  \textbf{Scot} is a final year computing science student looking for a free lightweight web application to create epics and user stories for his dissertation project. He has previously used GitHub projects but did not like the user interface or the inability to create epics. Alongside an aesthetic user interface, Scot wants to be able to add value statements to his epics and user stories so that he can highlight these when meeting with his supervisor. Scot also wants an easy way of prioritising his epics and user stories as these priorities can often change during supervisor meetings. His supervisor also wants Scot to estimate how long each user story will take to complete so he would like story point support.\\
+
+    \item \textbf{Yacine} is a requirements analyst at a large software development house. He is looking for an application where he can easily add epics and user stories to the three development teams he is part of. The stakeholders Yacine reports to have asked him to increase the visibility of the value that epics adds to the project. Yacine also wants to be able to create placeholder stories to come back to when he has a better grasp on the user story its definition of done. The developers Yacine works with also would like Yacine to order the epics and stories in terms of priority instead of only replying on a high to low priority scale. Yacine also wants to be able to label each user story he creates with the category of development it will involve so that the developers can understand this at a glance. \\
+
+    \item \textbf{Graham} is an agile team lead in a medium sized non-technology company. His team work with agile methodology and he is looking for an application which can support his team's use of kanban framework. As his team work in a hybrid manner, Graham would like a web application that does not require his team to download applications on multiple devices. Graham does not feel that his teams current workflow is optimal so would like the ability to customise the kanban board workflow his team use. He also feels that his team may not see the value behind some epics and user stories, so would like a functionality that highlights the importance of each task. Graham would also like to be able to view all his team's epics and user stories in one place to allow for easier prioritisation. \\
+
+    \item \textbf{Maria} is one of the workers tasked with managing and on-boarding new users to tooling in her firm. She would like a tool that has a streamlined process for adding new users. Part of Maria's responsibilities also include creating and keeping teams up to date. She would like to be able to easily search and view team structures and information as well as filter users by their roles. When on-boarding new users she would also like to be able to direct them to help documentation to help ease their induction process. 
+\end{itemize}
+
+\subsection{User Stories}
+From the user scenarios, four main user types were decided on and high-level user stories written for each. This process was used to ensure the primary focus when gathering requirements was based on the user experience instead of the features themselves. 
+
+\textbf{New user}
+\begin{itemize}
+    \item \textit{As a} new user, \textit{I want} to be able to sign up with my organisation, \textit{so that} I can begin to set up users and teams.
+    \item \textit{As a} new user, \textit{I want} to be able to access help documentation, \textit{so that} I can better understand how RViT works.
+\end{itemize}
+
+
+\textbf{Agile team member}
+\begin{itemize}
+    \item \textit{As an} agile team member, \textit{I want} to be able to add epics and user stories, \textit{so that} I can easily access any relevant information on them.
+    \item \textit{As an} agile team member, \textit{I want} to be able to edit my team's epics and user stories, \textit{so that} I can update any missing or incorrect information.
+    \item \textit{As an} agile team member, \textit{I want} to be able to reorder epics and user stories, \textit{so that} I can visualise their priority.
+    \item \textit{As an} agile team member, \textit{I want} to be able to add values to epics and user stories, \textit{so that} I can be aware of the value that the epic or user story adds to the project.
+    \item \textit{As an} agile team member, \textit{I want} to be able to add tags to user stories, \textit{so that} I can categorise them by work type.
+    \item \textit{As an} agile team member, \textit{I want} to be able to add custom tracking columns, \textit{so that} I can customise my kanban board workflow.
+    \item \textit{As an} agile team member, \textit{I want} to be able to mark epics as complete \textit{so that} I can choose to only view epics my team is currently working on.
+\end{itemize}
+
+\textbf{Agile team lead}
+\begin{itemize}
+    \item \textit{As an} agile team lead, \textit{I want} to have access to the same information as a team member user \textit{so that} I can keep track of my team's progress.
+    \item \textit{As an} agile team lead, \textit{I want} have access to a team dashboard view \textit{so that} I can view my team's statistics and proactively assess any potential issues with delivery.
+\end{itemize}
+    
+\textbf{Admin user}
+\begin{itemize}
+    \item \textit{As an} admin user, \textit{I want} to be able to add other admin users to my organisation \textit{so that} they can help me with the admin workflow.
+    \item \textit{As an} admin user, \textit{I want} to be able to add team member and team lead users to my organisation \textit{so that} they can be assigned to teams and begin working in an agile manner.
+    \item \textit{As an} admin user, \textit{I want} to be able to create teams within my organisation \textit{so that} teams can set up dashboards and work with RViT.
+    \item \textit{As an} admin user, \textit{I want} to be able to update my organisation's user and team information \textit{so that} this information can be kept up to date.
+\end{itemize}
+
+
+\section{Functional requirements}
+From the user stories detailed in \textbf{section 3.1.2}, a set of functional requirements were identified. These were split into the four user types identified previously and the MoSCoW method \cite{Consort14} was used for prioritisation. This method defines each functional requirement as belonging to one of the four following categories.
+\begin{itemize}
+    \item \textbf{Must Have (MH)} - these requirements make up the minimum usable subset of the requirements. These requirements are vital to the success of the project so must be completed.
+    \item \textbf{Should Have (SH)} - these are requirements that are not vital to the project success but are still important to complete for a polished product.
+    \item \textbf{Could Have (CH)} - these are requirements that are desirable but not essential to the project and would only be fully completed in the best case scenario. 
+    \item \textbf{Won't Have This Time (WH)} - these are requirements that have been deemed out of scope during the current project timeframe.
+\end{itemize}
+\hfill
+
+\hfill\\
+\textbf{RVIT User:}
+\begin{itemize}
+    \item \textbf{MH.1} - Users must have the ability to sign up to RViT with their organisation and create an initial administration account.
+    \item \textbf{MH.2} - Users must have the ability to log in to RViT.
+    \item \textbf{MH.3} - Users should not be allowed to access any pages they are not authorised to see.
+    \item \textbf{MH.4} - All users must have the ability to access help documentation to assist them when starting to use RViT.
+\end{itemize}
+\hfill
+ 
+\textbf{Team Member:}
+\begin{itemize}
+     \item \textbf{MH.5} - Team members must have the ability add epics and user stories in a centralised dashboard. 
+     \item \textbf{MH.6} - Team members must have the ability to view their team's epic and user story details. 
+     \item \textbf{MH.7} - Team members must have the ability to edit all epics and user stories their team has created. 
+     \item \textbf{MH.8} - Team members must have the ability to add values to their team's epics and user stories. 
+     \item \textbf{MH.9} - Team members must have the ability to add user stories to a kanban-style tracking board and move stories between tracking columns.
+     \item \textbf{MH.10} - Team members must have the ability to switch between the teams they are a member of. \\
+
+    \item \textbf{SH.1} - Team members should have the ability to visually prioritise epics by ordering them horizontally. 
+    \item \textbf{SH.2} - Team members should have the ability to visualise the priority of user stories by ordering them vertically. 
+    \item \textbf{SH.3} - Team members should have the ability to create custom kanban-style tracking columns.
+    \item \textbf{SH.4} - Team members should have the ability to customise the colours of epics, these can be used to link stories to epics via colour and will be useful on the kanban board view where epics will not be visible.
+    \item \textbf{SH.5} - Team members should have the ability to delete epics and user stories.\\
+
+    \item \textbf{CH.1} - Team members could have the ability to automatically mark stories as completed by moving them to a specialised kanban-style tracking column.
+    \item \textbf{CH.2} - When a team member edits an epic or user story this information could be logged and 'last edited' and 'created by' fields could be displayed in the epic/user story details.
+    \item \textbf{CH.3} - Team members could have the ability to filter their view of epics to include/exclude previously completed epics and stories. \\
+
+    \item \textbf{WH.1} - Team members won't have the ability to define sprints. RViT's main focus was to provide streamlined kanban framework support so this was deemed out of scope but would be a feature set considered in future development.\\
+\end{itemize}
+\hfill
+
+\textbf{Team Lead:}
+\begin{itemize}
+    \item \textbf{MH.11} -  A team lead must have the same access and functionality as a team member user. \\
+
+    \item \textbf{CH.4} - A team lead could have the ability to add and remove team member users from a team they lead. \\
+
+    \item \textbf{WH.2} - A team lead won't have the ability to download reports of their team's metrics. While this would be a useful feature set to include in the project, it did not tie in with the core aims of the project therefore was deemed out of scope.
+\end{itemize}
+\hfill
+
+\textbf{Admin User:}
+\begin{itemize}
+    \item \textbf{MH.12} - An admin user must be able to add other admin, team member and team lead users to their organisation. 
+    \item \textbf{MH.13} - An admin user must be able to create teams and add team member and team lead users to these teams. 
+    \item \textbf{MH.14} - An admin user must be able to edit both team and user information.\\
+    \item \textbf{MH.15} - An admin user must be able to delete teams and users.\\
+
+    \item \textbf{CH.5} - An admin user could have read only access to a team in their organisation's dashboards to help diagnose any issues a team is having.\\
+
+\end{itemize}
+
+\section{Non functional requirements}
+Alongside the functional requirements, a set of non-functional requirements were identified. These are requirements that involve the operation and external constraints that a system must adhere to. While these requirements are typically overlooked, they are often more vital in preventing failure than functional requirements \cite{Mairiza2010}.
+
+\begin{itemize}
+    \item \textbf{MH.15} - The application must be easy-to-use and designed in an intuitive way so users with and without experience with agile methodology can use it. 
+    \item \textbf{MH.16} - The application must be portable and work on all common browsers.
+    \item \textbf{MH.17} - As multiple team members will work with the application at once, the application must be designed to work with concurrent users.
+    \item \textbf{MH.18} - The application's code base must be maintainable and easily extendable to allow for future work.
+    \item \textbf{MH.19} - The application must be robust so users can use it without encountering any bugs or errors.
+    \item \textbf{MH.20} - The application must have quick load times and performance to ensure the user experience is as smooth as possible. \\
+
+    \item \textbf{WH.3} - As was identified during initial requirement analysis, the primary use case of RViT will be on computers. Due to this RViT was designed with desktop and laptop use in mind, though future development could include creating a mobile-friendly version of the web application.
+\end{itemize}
+
+\end{document}
