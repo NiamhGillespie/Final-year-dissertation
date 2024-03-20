@@ -1,50 +1,81 @@
 \documentclass[l4proj.tex]{subfiles}
 \begin{document}    
 
-little blurb 
-\section{Software Engineering techniques}
-%(~ 2 pages w/ pictures)
-A number of different software engineering techniques were implemented during the creation of RViT. An Agile working method was chosen as it suited the project (why?).
+This chapter covers the implementation of RViT. 
 
-Each section of work followed a typical cycle. First a front end design was created, then the relevant API section was designed and updates to the database structure made. The API section was then created and finally the front-end design was implemented. 
+\section{Software Engineering techniques}
+Throughout the duration of the project, an agile approach was taken to the development of the product. The scrum framework in particular was followed, with development being broken down into sprints, with elements of kanban framework also introduced, such as prioritising work with a kanban board.
+
+
+\subsection{GitHub Version control and Continuous Integration}
+GitHub was used for version control throughout the duration of the project. This ensured that back up versions of the code were available at all times which was especially useful when unrecoverable local development issues occurred. As there was only one developer working on the project, no branching strategies were used, though special care was taken to write meaningful commit messages with links to the relevant user stories so that the commit history could be accessed with ease. 
+
+Two GitHub action workflows were used to carry out continuous integration checks on both the Django and React JS code. Both of these workflows installed the relevant dependencies then ran a set of testing suites on the code. The Django workflow was developed roughly a month into the project, when unit tests were first created. However, the React JS workflow was defined much later in the project as testing was not started until the majority of front end code had been written. Unfortunately, due to the brittle nature of the unit tests, the continuous integration pipelines would often fail when large areas of code were refactored, so would be disabled until time was allocated for fixing these tests. This was often not a priority as the main way code correctness was checked was through manual testing of the application.
+
+\subsection{Project management}
+GitHub's built-in issue and project functionality were the primary tools used for the project management of RViT. The functional requirements defined in \textbf{Section 3.2} were broken down into small user stories that aligned with the INVEST criteria (\cite{Buglione2013}). This ensured that the majority of the user stories created during the development process were independent in scope, negotiable, valuable to the project, able to be estimated, small and also able to be tested. 
+
+For each user story a definition of done was also specified to create a list of criteria that when completed means the user story is done (\cite{Silva2017}). This was extremely helpful during the development process as often user stories were defined at the start of the sprint so having a checklist of done criteria clarified any of the ambiguous areas of a user story. Some user stories also included notes for suggested approaches to development or important development restrictions to remember. GitHub's labels functionality was also used to categorise user stories by the development work they would require, for example; backend, frontend or testing. 
+
+To visualise story progress and priority, a GitHub project kanban board was created and linked to RViT's repository as can be seen in \textbf{Fig. \ref{fig:My Github issue board}}. Four columns were defined to manage the workflow; 'Parking Lot', 'Backlog', 'In Progress' and 'Done'. The 'Parking lot' column was used to store issues that did not yet have user stories of definitions of done defined. These undefined issues were typically created during supervisor meetings where scope creep occurred or during the development process when it was realised that a story did not match the INVEST criteria so should be broken down into more manageable pieces of work. While these stories were marked with an 'undefined' label, the labels did not show up on the project board so this additional column was created. This visual separation helped maintain awareness of the undefined issues and user stories and definition of dones were defined as soon as the developer had any free time
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.4]{dissertation/images/ImplementationIssueBoard.png}
+\caption{GitHub project board used for issue management and prioritisation}
+\label{fig:My Github issue board} 
+\end{center}
+\end{figure}
 
 \subsection{Sprint-based development}
-It was decided to work in sprints during development. This allowed the requirements to be broken into subsections and minimum viable products. Once a sprint had been completed, a new set of issues were proposed as the backlog for the next sprint. While it was time based estimated for different issues were generally accurate, some issues were more difficult due to unforeseen blockers. As the project progressed it was easier to identify what issues would present blockers so more achievable backlogs could be created. 
+In the initial stages of the project, a more kanban-style approach was taken to requirement prioritisation and development. However this lead to a very fragmented development approach as similar requirements were often not grouped together and instead worked on separately. The lack of set delivery dates also lead to items being worked on for longer than they realistically should have been. To rectify these issues, sprints were introduced. This meant a sprint backlog had to be defined, so similar requirements were grouped together. While the sprints varied in length between 3 to 5 weeks long, time estimations also had to be calculated to discover how many issues could realistically be completed in a single sprint. 
 
-Any scope creep?
+While the time estimates were generally accurate, unforeseen blockers sometimes slowed progress down. As the project progressed it was easier to identify what kind of user stories would cause these issues so more achievable sprint backlogs could be created. 
 
-\subsection{Issue tracking}
-As this project was carried out in GitHub, issues were created. To understand the issue better, each issue contained a user story, definition of done and was categorised through labels. Why was this helpful?
 
-A kanban board was also created using GitHub projects with four different columns defined. Parking lot, Backlog, In Progress and Done. The Parking lot column was introduced after the first sprint to identify issues that had not yet had a user story or definition of done defined. This was very helpful when new requirements were identified during meetings.
+\subsection{Refactoring}
+ As an agile approach was taken throughout the project, in line with the agile manifesto (\cite{Kent2001(manifesto)}) the creation of working software was prioritised over writing extensive documentation. This meant that for the code base to be maintainable the code had to be well written. Roughly halfway through the project it was noticed that some improvements could be made so a large-scale refactoring process was carried out. Both the Django and React JS sections underwent this refactor, but as more problems were noticed in the React JS sections, this was prioritised.
 
-Photo of my kanban board
+ Following advice from Kerninghan and Plauger, the code base was edited to ensure the majority of code was self documenting and that cyclic complexity or the presence of 'bushy trees' was reduced as much as possible (\cite{Kernignhan1974}). For some of the more complex code sections such as the drag and drop functionality, large areas of the code were re-written to improve code comprehension. Special care was also made to ensure variable names made sense. There was also a problem of repeated code, particularly across the React JS classes so as much of this code as possible was refactored into helper functions. Unfortunately due to a majority of functions carrying out class state updates, not as many of these functions were able to be refactored. The file structure of the React JS code was also improved, with files split into various sub-folders rather than being all at one level. 
 
-\subsection{GitHub and Continuous Integration}
-both Django and react unit tests integrated into pipeline
+ To ensure consistent use of white space and to make sure the code written was up to professional standard of readability, all React JS code was linted. ESLint was used to identify common JavaScript problems such as syntax errors and other code smells, while Prettier was used to provide an opinionated style guide to ensure a consistent coding style was followed throughout the JavaScript code base. This tooling was used consistently during the rest of the project to ensure good quality code was written.
 
-Mention that netlify was set up to have continuous integration - especially helpful when ironing out display issues on different size screens
 
-\subsection{Refactoring Code base}
-Halfway through the project a large code refactor was carried out. It was noticed some code improvements were needed. 
-Removed as many of the repeated code sections as possible
-Added automated JavaScript linting with eslint
-Improved unit tests 
-Organised file structure 
-simplifying methods and improving readability of code
-
-\section{API/back end}
-\subsection{Database design}
-could have entity relationship diagram?
+\section{API Implementation}
+Choosing to work with agile methodology had the most impact on the API implementation. As the admin section was created at the tail-end of the project, all the API calls for the dashboards had to be refactored to account for multiple teams existing in the database. 
 
 \section{Frontend}
-\subsection{components}
-\subsection{drag and drop}
-\subsection{API calls}
 
-\section{Maintainability}
+\subsection{Components}
+The use of components was essential when developing RViT. This allowed dashboards with large feature sets to be broken down into smaller, more manageable files. The components were also reusable across the code base, meaning code did not have to be redeveloped for different use cases. This also meant that if updates were needed to refine the display or use of a component it only needed to be edited in one file rather than in multiple places. 
 
-\section{Reliability}
+Using components also allowed for updates to be carried out on these without having to refresh the entire page. This leads to less loading times for the user and was essential when implementing pages like the Tracking Dashboard where a user stories state can be updated without a full page refresh needed. 
+
+\subsection{Drag and Drop}
+As the Epics Dashboard was designed to let users visualise priority by the spacial ordering of epics and user stories, users needed to be able to reorder these elements. It was decided that the most user-friendly way to implement this was through the use of drag and drop. It was decided to use a library to provide this functionality as developing these features would have taken up too much project time. 
+
+A number of react libraries were tested, with the majority of them found to be lacking the appropriate documentation or example code for the required functionality to be properly implemented. Finally the react-beautiful-dnd library was chosen as it had an appropriate amount of documentation and is also widely used with over 1,000,000 weekly downloads (\cite{ReactDnD}). The learning curve was still fairly steep as my elements had to have both draggable and droppable sections in order to work correctly. 
+
+It was noticed that it could be quite hard to re-order the user stories due to the limited space they took up on the page so colour feedback was provided to highlight where the user story could be dropped. To further customise the user experience this colouring was based on the colour of the epic that the user story corresponded to. 
+
+While the implementation on the Epics Dashboard only allowed for the epics to be reordered horizontally and the user stories vertically, the Tracking Dashboard required both horizontal and vertical movement of the user stories between columns. While the same library as before was used, the implementation of the functionality was quite different. In the Epics Dashboard each epic and user story was given an ordering number that would be updated when a drag and drop event occurred - this ensured the ordering remained consistent across all team members. However for the tracking column an ordered list of stories was maintained to carry out this functionality. If a story was moved out of a column, it was removed from the list, and if a story was moved into a column it was added to the list at the appropriate position. If a story was reordered in a column the list was updated to reflect the new positioning. While this lead to more API calls being made, it was essential to making sure that every member of a team could view the boards and see the same ordering. 
+
+\subsection{Styling}
+The use of colour was essential to creating an easy-to-use approach to agile project management. Users could set the colours of epics, tags and values through the use of a colour picker. User stories inherited their colour from the epic they belonged to, creating an easy visual connection between elements. These colours persisted throughout the application, which was achieved by inline CSS styling. 
+
+The majority of styling was carried out through Bootstrap and external CSS. Bootstrap was used primarily for the easy positioning of elements while CSS was used to style fully custom component designs that could easily be refactored. 
+
+\section{Help Documentation}
+Towards the end of the project, it was decided there was a need to include in-app help documentation to assist users. While efforts were made to ensure that RViT followed common design standards seen in similar tooling, the workflow is quite different. It was decided to keep this documentation short while still explaining the key points to ensure it could be read by developers quickly. The documentation was split into subsections; a general overview of what RViT is, and then a 'how to use' section for each user type describing the different pages and functionality they will have access to.
+
+This documentation should be expanded on in the future, especially as it currently expects the user to understand key agile concepts such as what an epic is and how kanban boards work. This would not be ideal for users new to either agile overall or the kanban framework in particular. 
+
+
 
 \section{Deployment}
+At the end of the project, once RViT's core functionality had been completed, a deployment was planned. It was decided to host the Django API and database separately from the React JS application. This allowed the API to be hosted and tested from the locally hosted version of the RViT web application to make sure everything worked as expected before the React JS application was hosted.
+
+It was decided to use Python Anywhere to host the Django API and database. This was primarily chosen due to the author's previous experience working with the tool as well as the free tier provided which provided enough CPU runtime and disk storage to successfully host the API and database. It was noticed that the locally hosted version of RViT did begin to experience some short lags while API calls were being processed once it was using the hosted API, but as seen in the performance evaluation, these did not effect the usability of the web application greatly.
+
+The application tier was then hosted using Netlify. Like Python Anywhere this provided a free tier that suited the project's needs. Netlify also linked straight to RViT's GitHub repository meaning the web application could be updated each time a commit was made. This was especially helpful when attempting to fix display issues on screens of different sizes as the code could be committed straight to RViT's repository and Netlify would update the web application straight away.
 \end{document}

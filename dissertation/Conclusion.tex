@@ -1,18 +1,28 @@
 \documentclass[l4proj.tex]{subfiles}
 \begin{document}  
 
-This chapter will conclude :)
+This chapter summarises the work carried out on RViT and makes suggestions for future development before a brief reflection is carried out. 
 
 \section{Summary}
+The created product, RViT, is a streamlined, easy-to use agile project management tool centered around the kanban framework. It provides teams with the ability to break down project requirements into epics and user stories, and prioritise them either visually through the use of horizontal and vertical space or via pre-defined priority settings. Epics and stories can also be assigned values to help teams visualise and understand the business value a specific item brings, something that similar tooling often overlooks. To allow teams envision user story progress, RViT includes a fully customisable kanban board complete with optional WIP limits to allow for as much flexibility as possible. The administration side is also taken care of, to allow small to medium enterprises to manage their users and teams seamlessly.
+
+RViT was evaluated in a number of ways, from examining its performance and accessibility through Google Lighthouse, to conducting a user evaluation to analyse the usability of the application. From these evaluations it was found that RViT was a highly usable application, with some of the user study participants citing it as easier to use than other market-leading products like Jira. 
+
+A live version of RViT can be found at \url{https://rvit.netlify.app/}.
 
 \section{Future Work}
-There are vast opportunities for future development on RViT.
+The initial focus of RViT was to provide an easy-to-use, streamlined approach to kanban-style agile project management. As found in the evaluations, there are many small changes that could be made to the existing application in order to improve the overall user experience. These include fixing bugs found in the user evaluation, making some of the suggested user interface changes to improve the experience for newer users, and highlighting the reasoning behind incorporating values in the application better. 
 
-implement changes suggested in user evaluation.
-expand agile frameworks covered
-integrate with other tools - especially linking to pull requests
-add in comments
+There are also many ways in which RViT could be improved through the introduction of new feature sets. As mentioned in [section ???], stakeholders would be some of the primary beneficiaries of the increased visibility of business values RViT incorporates. Due to the time scale of the original project, introducing stakeholder functionality was deemed out of scope. However, providing stakeholders with a tailored user experience which allows them to seamlessly navigate through their different team's dashboards and provides easy-to-understand team and project business value break-downs would be an invaluable addition to RViT.
+
+Another proposed set of functionality that was also identified as out of scope was adding agile-based metrics to the application. Metrics such as team throughput and average task lead time will help teams identify possible bottlenecks and improve their ability to accurately determine how long tasks will take. To compete with other market-leading tools such as Jira, teams and stakeholders should be able to export automated reports on these metrics to be able to track development strengths and weaknesses over a set period of time. 
+
+Integration with other popular agile tooling should also be considered in future development. Being able to link GitHub commits and pull requests to the relevant user stories would be extremely helpful for looking into blockers and requesting code reviews. Expanding the agile frameworks that RViT supports should also be considered in the future, allowing the application to support different kinds of software development teams while still maintaining the core philosophies and simplified approach that make RViT stand out from similar tooling.  
+
 
 \section{Reflection}
-Requirements analysis, using agile project management for myself helped a lot in the development of RViT.
+While I had previous experience using agile project management tools like Jira, the development of RViT helped me identify what agile concepts these tools were missing and how to overcome the common pitfall of complexity that tools like these often experience. Designing a product that has a niche in a market with such established and widely used apps was daunting, but motivated me to focus on the user experience to design a visually-pleasing, streamlined tool that I would want to use. This was very different from other projects I have taken on at university and in my own time, as I had never spent so much time working on the user workflow experience before, preferring to focus on writing code. While RViT might not be perfect, it is a tool I am very proud of.
+
+When conducting the user evaluation of RViT, the feedback I received was extremely helpful, especially the advice on improving the workflow of the application and user interface design improvements I had not considered. Upon reflection, if I had conducted a short user evaluation sooner in the development of RViT many of the smaller issues could have been rectified, such as the ambiguous nature of the add story button. This would have lead to an improved user experience and an overall improved product.
+
 \end{document}
