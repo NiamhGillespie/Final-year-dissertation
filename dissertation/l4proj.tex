@@ -2,6 +2,7 @@
 
 \documentclass{l4proj}
 \usepackage{subfiles}
+\usepackage{pdfpages}
 
     
 %
@@ -21,6 +22,8 @@
 %==============================================================================
 %% ABSTRACT
 \begin{abstract}
+    Current agile project management tooling often comes with a considerable administrative and 
+    
     Every abstract follows a similar pattern. Motivate; set aims; describe work; explain results.
     \vskip 0.5em
     ``XYZ is bad. This project investigated ABC to determine if it was better. 
@@ -29,10 +32,15 @@
     ABC was 20\% better than XYZ, though it caused rabies in half of subjects.''
 \end{abstract}
 
-ADD IN ACKNOWLEDGEMENTS HERE, 
-Peggy and all the developers who took part in my pilot study and user evaluation - feedback was invaluable.
 %==============================================================================
 
+\chapter*{Acknowledgements}
+
+I would like to thank my supervisor, Peggy Gregory, for her continued help and support throughout the duration of the project. I would also like to thank the developers who took part in my pilot study and user evaluation, their feedback was invaluable.
+
+I would also like to thank my family and friends for putting up with me talking about RViT 24-7.
+
+%==============================================================================
 % EDUCATION REUSE CONSENT FORM
 % If you consent to your project being shown to future students for educational purposes
 % then insert your name and the date below to  sign the education use form that appears in the front of the document. 
@@ -42,8 +50,8 @@ Peggy and all the developers who took part in my pilot study and user evaluation
 % Please note that you are under no obligation to sign 
 % this declaration, but doing so would help future students.
 %
-%\def\consentname {My Name} % your full name
-%\def\consentdate {20 March 2018} % the date you agree
+\def\consentname {Niamh Gillespie} % your full name
+\def\consentdate {22 March 2024} % the date you agree
 %
 \educationalconsent
 
@@ -116,27 +124,30 @@ Peggy and all the developers who took part in my pilot study and user evaluation
 
 \begin{appendices}
 
-\chapter{Appendices}
+\chapter{Final Deliverable}
 
-Typical inclusions in the appendices are:
+\chapter{Database Schema}
 
-\begin{itemize}
-\item
-  Copies of ethics approvals (required if obtained)
-\item
-  Copies of questionnaires etc. used to gather data from subjects.
-\item
-  Extensive tables or figures that are too bulky to fit in the main body of
-  the report, particularly ones that are repetitive and summarised in the body.
+\chapter{Ethics Checklist}
+\centerline{
+\includegraphics[width=1.2\textwidth, page=1]{dissertation/appendices/2549880G_ethics_checklist.pdf}
+}
 
-\item Outline of the source code (e.g. directory structure), or other architecture documentation like class diagrams.
+\includepdf[width=1.2\textwidth, pages={2}]{appendices/2549880G_ethics_checklist.pdf}
 
-\item User manuals, and any guides to starting/running the software.
 
-\end{itemize}
 
-\textbf{Don't include your source code in the appendices}. It will be
-submitted separately.
+\chapter{User Evaluation Survey}
+\begin{center}
+\centering
+\includegraphics[width=1\textwidth, page=1]{dissertation/appendices/FirstPageEvaluationSurvey.png}
+\end{center}
+
+\includepdf[pages={2-5}]{appendices/UserEvaluationSurveyForm.pdf}
+
+\chapter{User evaluation survey responses}
+
+\chapter{Qualitative Coding of Text Responses from User Evaluation}
 
 \end{appendices}
 
