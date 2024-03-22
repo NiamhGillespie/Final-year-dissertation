@@ -22,14 +22,9 @@
 %==============================================================================
 %% ABSTRACT
 \begin{abstract}
-    Current agile project management tooling often comes with a considerable administrative and 
-    
-    Every abstract follows a similar pattern. Motivate; set aims; describe work; explain results.
-    \vskip 0.5em
-    ``XYZ is bad. This project investigated ABC to determine if it was better. 
-    ABC used XXX and YYY to implement ZZZ. This is particularly interesting as XXX and YYY have
-    never been used together. It was found that  
-    ABC was 20\% better than XYZ, though it caused rabies in half of subjects.''
+    Current agile project management tooling approaches are either feature-rich implementations which come with considerable administrative, complexity, and financial overheads or are overly simplified, drawing on few areas of agile methodology. RViT finds a middle ground between these two types of tools by providing an agile feature set designed to streamline the project management approach. The use of business values is also at the forefront of the tool with the goal of enhancing developer awareness of these values by increasing their visibility.
+
+    Software developers were recruited to participant in a comprehensive user evaluation of RViT, with 56$\%$ of the study respondents stating that they found RViT easier to use or more intuitive than the industry leading tool Jira. Evaluations were also carried out to look into testing, performance and security and the results of these were deemed acceptable.
 \end{abstract}
 
 %==============================================================================
@@ -38,7 +33,7 @@
 
 I would like to thank my supervisor, Peggy Gregory, for her continued help and support throughout the duration of the project. I would also like to thank the developers who took part in my pilot study and user evaluation, their feedback was invaluable.
 
-I would also like to thank my family and friends for putting up with me talking about RViT 24-7.
+I also want to express my gratitude to my family and friends for putting up with me talking about RViT 24-7.
 
 %==============================================================================
 % EDUCATION REUSE CONSENT FORM
@@ -124,30 +119,139 @@ I would also like to thank my family and friends for putting up with me talking 
 
 \begin{appendices}
 
-\chapter{Final Deliverable}
-
 \chapter{Database Schema}
+\label{app: database}
 
-\chapter{Ethics Checklist}
 \centerline{
-\includegraphics[width=1.2\textwidth, page=1]{dissertation/appendices/2549880G_ethics_checklist.pdf}
+\includegraphics[width=1.2\textwidth, page=1]{dissertation/appendices/DatabaseDiagram.png}
 }
 
-\includepdf[width=1.2\textwidth, pages={2}]{appendices/2549880G_ethics_checklist.pdf}
+\chapter{Enlarged epic and user story detail modals}
+\label{app: epics and us details}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/EpicDetails.png}
+\caption{Large Epic details modal}
+\label{fig: large epic detail modals}
+\end{figure}
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/StoryDetails.png}
+\caption{Large Story details modal}
+\label{fig:large story detail modals}
+\end{figure}
+
+\chapter{Enlarged Tag Dashboard pages}
+\label{app: large tag and value views}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/TagDashboardOne.png}
+\caption{Large Tag dashboard - tag overview}
+\label{fig: large tag dashboard - tag overview}
+\end{figure}
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/TagDashboardTwo.png}
+\caption{Tag dashboard - values overview}
+\label{fig:large Tag dashboard - values overviews}
+\end{figure}
 
 
+\chapter{Admin workflow pages}
+\label{app: admin workflow}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/addteam.png}
+\caption{Add team page}
+\label{fig: add team page}
+\end{figure}
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/adduser.png}
+\caption{Add user page}
+\label{fig: add user page}
+\end{figure}
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/viewteams.png}
+\caption{View Teams page}
+\label{fig: view team page}
+\end{figure}
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/editteam.png}
+\caption{Edit Team modal}
+\label{fig: edit team modal}
+\end{figure}
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/viewuser.png}
+\caption{View Users page}
+\label{fig: view user page}
+\end{figure}
+\hfill\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/edituser.png}
+\caption{Edit User modal}
+\label{fig: edit user page}
+\end{figure}
+
+
+
+
+\chapter{User authentication pages}
+\label{app: user authentication workflow}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/login.png}
+\caption{Log-in page}
+\label{fig: login}
+\end{figure}
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{dissertation/images/sign up.png}
+\caption{Sign-up page}
+\label{fig:sign up}
+\end{figure}
+
+\chapter{Ethics Checklist}
+\label{app: ethics checklist}
+
+\centerline{
+\includegraphics[width=0.9\textwidth, pages={1}]{dissertation/appendices/2549880G_ethics_checklist.pdf}
+}
+
+\includepdf[width=1\textwidth, pages={2}]{appendices/2549880G_ethics_checklist.pdf}
 
 \chapter{User Evaluation Survey}
-\begin{center}
-\centering
-\includegraphics[width=1\textwidth, page=1]{dissertation/appendices/FirstPageEvaluationSurvey.png}
-\end{center}
+\label{app: user eval survey}
 
-\includepdf[pages={2-5}]{appendices/UserEvaluationSurveyForm.pdf}
+\centerline{
+\includegraphics[width=0.9\textwidth, pages={1}]{dissertation/appendices/UserEvaluationSurveyForm.pdf}
+}
 
-\chapter{User evaluation survey responses}
+\includepdf[width=1.2\textwidth, pages={2-5}]{appendices/UserEvaluationSurveyForm.pdf}
+
 
 \chapter{Qualitative Coding of Text Responses from User Evaluation}
+\label{app: qualitative coding}
+\\
+\centerline{
+\includegraphics[width=0.85\textwidth, page=1]{dissertation/appendices/Qualitative coding of text responses.pdf}
+}
+
+\includepdf[width=1.2\textwidth, pages={2-10}]{appendices/Qualitative coding of text responses.pdf}
 
 \end{appendices}
 
